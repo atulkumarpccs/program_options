@@ -168,7 +168,7 @@ private:
          ;
       // Run a parser here (with no command line options) to add these defaults into
       // results, this way they will be enabled even if no config files are parsed.
-      store(po::command_line_parser(0, 0).options(config_only_options).run(), results);
+      store(po::command_line_parser(1, 0).options(config_only_options).run(), results); //added 1 for temparly fixing the exception in boost lib
       notify(results);
    }
    void SetEnvMapping()
